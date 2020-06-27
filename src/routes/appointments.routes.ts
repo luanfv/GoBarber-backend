@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { startOfHour, parseISO, isEqual } from 'date-fns';
-import Appointment from './../models/Appointment';
 import AppointmentsRepository from './../repositories/AppointmentsRepository';
 
 const appointmentsRouter = Router();
@@ -16,7 +15,11 @@ appointmentsRouter.post('/', (request, response) => {
     if (findDateAppointment)
         return response.status(400).json({ message: 'This date/time is already scheduled' });
 
-    const appointment = appointmentsRepository.create(name, formatDate)
+    const appointment = appointmentsRepository.create({ 
+        name, 
+        date: formatDate 
+    })
+    
     return response.json(appointment);
 });
 
