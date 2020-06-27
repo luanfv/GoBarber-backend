@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4'
+import { uuid } from 'uuidv4';
  
 class Appointment {
     id: string;
@@ -14,4 +14,4 @@ class Appointment {
     }
 }
 
-export default Appointment
+export default Appointment;

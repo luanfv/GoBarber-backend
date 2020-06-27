@@ -1,5 +1,5 @@
 import Appointment from './../models/Appointment';
-import { isEqual } from 'date-fns'
+import { isEqual } from 'date-fns';
 
 interface CreateAppointmentDTO {
     name: string;
@@ -23,11 +23,11 @@ class AppointmentsRepository {
     }
 
     public create({ name, date }: CreateAppointmentDTO): Appointment {
-        const appointment = new Appointment({ name, date })
-        this.appointments.push(appointment)
+        const appointment = new Appointment({ name, date });
+        this.appointments.push(appointment);
 
-        return appointment
+        return appointment;
     }
 }
 
-export default AppointmentsRepository
+export default AppointmentsRepository;
