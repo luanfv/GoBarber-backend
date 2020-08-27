@@ -26,8 +26,6 @@ class CreateAppointmentService {
             date: formatDate 
         });
 
-        await appointmentsRepository.save(appointment);
-
         return appointment;
     }
 }
