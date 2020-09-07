@@ -15,9 +15,9 @@ interface IRequest {
 @injectable()
 class CreateAppointmentService {
     constructor(
-            @inject('appointmentsRepository') 
-            private appointmentsRepository: IAppointmentsRepository
-        ) {}
+        @inject('appointmentsRepository') 
+        private appointmentsRepository: IAppointmentsRepository
+    ) {}
 
     public async execute({ provider_id, user_id, date }: IRequest): Promise<Appointment> {
         const appointmentDate = startOfHour(date);
