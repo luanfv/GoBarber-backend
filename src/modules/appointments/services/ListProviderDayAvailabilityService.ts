@@ -46,7 +46,7 @@ class ListProviderMonthAvailabilityService {
             };
         });
 
-        return [{ hour: 8, available: true }];
+        return availability;
     }
 }
 
