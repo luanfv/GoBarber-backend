@@ -33,7 +33,7 @@ class CreateAppointmentService {
         if (isBefore(appointmentDate, Date.now()))
             throw new AppError("You can't create an appointment on a past date.");
 
-        const findDateAppointment = await this.appointmentsRepository.findByDate(appointmentDate);
+        const findDateAppointment = await this.appointmentsRepository.findByDate(appointmentDate, provider_id);
 
         if (findDateAppointment)
             throw new AppError('This date/time is already scheduled');
